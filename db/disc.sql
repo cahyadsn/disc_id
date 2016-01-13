@@ -11,7 +11,7 @@ CREATE TABLE IF NOT EXISTS tbl_personalities (
   most char(1) NOT NULL,
   least char(1) NOT NULL,
   PRIMARY KEY (id)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM;
 
 DROP TABLE IF EXISTS tbl_results;
 CREATE TABLE IF NOT EXISTS tbl_results(
