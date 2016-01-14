@@ -49,8 +49,8 @@ $rows      = count($data)/(4*$cols);
       <?php
       for($i=0;$i<$rows;++$i){
         echo "<tr".($i%2==0?" class='dark'":"").">";
-        for($j=0;$j<$cols;++$j){
-          for($n=0;$n<4;++$n){
+        for($j=0;$j<4;++$j){
+          for($n=0;$n<$cols;++$n){
              if($j>0 && $n==0){
                echo "<tr".($i%2==0?" class='dark'":"").">";
              }elseif($j==0){
@@ -84,7 +84,7 @@ $rows      = count($data)/(4*$cols);
       </tbody>
       <tfoot>
         <tr>
-          <th colspan='16'>
+          <th colspan='<?php echo $cols*4;?>'>
             <input type='submit' value='proses' class='btn'/>
            </th>
          </tr>
