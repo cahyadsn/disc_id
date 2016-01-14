@@ -36,3 +36,5 @@ DISC merupakan model perilaku yang membantu setiap manusia memahami“mengapa se
 ##Contact
 + facebook (https://m.facebook.com/cahya.dsn)
 + email (cahyadsn@gmail.com)
++ demo site    : (http://phpindonesia.id1945.com/dics_id)
++ source code  : (https://github.com/cahyadsn/disc_id)
