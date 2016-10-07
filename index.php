@@ -9,7 +9,7 @@ SOURCE CODE  : https://github.com/cahyadsn/disc_id
 *************************************/
 include 'inc/db.php';
 //-- query data from database
-$sql='SELECT * FROM personalities ORDER BY no ASC';
+$sql='SELECT * FROM tbl_personalities ORDER BY no ASC';
 $result=$db->query($sql);
 $x=array();
 $no=0;
@@ -79,7 +79,7 @@ foreach($x as $dt){
                  .($i+$n*$rows+1)
                  ."</th>";
              }
-			 $no=$n*$rows+$i*4+$j+($cols*$rows*$n);
+	    $no=$n*$rows+$i*4+$j+($cols*$rows*$n);
             echo "<td".($j==0?" class='first'":"").">
                   {$data[$no]->term}
                   </td>
