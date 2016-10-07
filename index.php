@@ -2,24 +2,44 @@
 /************************************
 FILENAME     : index.php
 AUTHOR       : CAHYA DSN
-CREATED DATE : 2015-01-13
+CREATED DATE : 2016-01-13
+UPDATED DATE : 2016-10-07
+DEMO SITE    : http://cahyadsn.dev.php.or.id/disc_id
+SOURCE CODE  : https://github.com/cahyadsn/disc_id
 *************************************/
 include 'inc/db.php';
 //-- query data from database
-$sql='SELECT * FROM tbl_personalities ORDER BY no ASC';
+$sql='SELECT * FROM personalities ORDER BY no ASC';
 $result=$db->query($sql);
-$data=array();
-while($row=$result->fetch_object()) $data[]=$row;
-$terms=json_encode($data);
+$x=array();
+$no=0;
+while($row=$result->fetch_object()){
+  if($no!=$row->no){
+    $no=$row->no;
+    $x[$no]=array();
+  }
+  $x[$no][]=$row;
+}
 $show_mark = 0;  //<-- show 1 or hide 0 the marker
-$cols      = 4;  //<-- number of columns
-$rows      = count($data)/(4*$cols);
+$cols      = 3;  //<-- number of columns
+$rows      = count($x)/$cols;
+shuffle($x);
+$data=array();
+foreach($x as $dt){
+  shuffle($dt);
+  foreach($dt as $d){
+    $data[]=$d;
+  }
+}
 ?>
 <doctype html>
 <html>
   <head>
     <title>DISC Personality Test</title>
-    <link rel='stylesheet' href='css/disc.css' />
+    <meta http-equiv="expires" content="<?php echo date('r');?>" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="cache-control" content="no-cache" />
+    <link rel='stylesheet' href='css/disc.css?<?php echo md5(date('r'));?>' />
   </head>
   <body>
     <header><h1>:: DISC Personality Test</h1></header>
@@ -47,34 +67,35 @@ $rows      = count($data)/(4*$cols);
       </thead>
       <tbody>
       <?php
-      for($i=0;$i<$rows;++$i){
+      for($i=0;$i<$rows;$i++){
         echo "<tr".($i%2==0?" class='dark'":"").">";
         for($j=0;$j<4;++$j){
-          for($n=0;$n<$cols;++$n){
+          for($n=0;$n<$cols;$n++){
              if($j>0 && $n==0){
                echo "<tr".($i%2==0?" class='dark'":"").">";
              }elseif($j==0){
-               echo "<th rowspan='$cols'"
+               echo "<th rowspan='4'"
                  .($j==0?" class='first'":"").">"
                  .($i+$n*$rows+1)
                  ."</th>";
              }
+			 $no=$n*$rows+$i*4+$j+($cols*$rows*$n);
             echo "<td".($j==0?" class='first'":"").">
-                  {$data[$cols*($i+$n*$rows)+$j]->term}
+                  {$data[$no]->term}
                   </td>
                   <td".($j==0?" class='first'":"").">
                 <input type='radio' 
                        name='m[".($i+$n*$rows)."]' 
-                     value='{$data[$cols*($i+$n*$rows)+$j]->most}' 
+                     value='{$data[$no]->most}' 
                      required />" 
-               .($show_mark?$data[$cols*($i+$n*$rows)+$j]->most:'')
+               .($show_mark?$data[$no]->most:'')
                ."</td>
                   <td".($j==0?" class='first'":"").">
                   <input type='radio' 
                          name='l[".($i+$n*$rows)."]' 
-                         value='{$data[$cols*($i+$n*$rows)+$j]->least}' 
+                         value='{$data[$no]->least}' 
                          required />"
-                 .($show_mark?$data[$cols*($i+$n*$rows)+$j]->least:'')
+                 .($show_mark?$data[$no]->least:'')
                  ."</td>";
             }
           echo "</tr>";
