@@ -1,3 +1,13 @@
+<?php
+/************************************
+FILENAME     : result.php
+AUTHOR       : CAHYA DSN
+CREATED DATE : 2016-01-13
+UPDATED DATE : 2016-10-08
+DEMO SITE    : http://cahyadsn.dev.php.or.id/disc_id
+SOURCE CODE  : https://github.com/cahyadsn/disc_id
+*************************************/
+?>
 <doctype html>
 <html>
   <head>
