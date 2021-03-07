@@ -13,26 +13,26 @@ DISC merupakan model perilaku yang membantu setiap manusia memahami“mengapa se
 [![GitHub stars](https://img.shields.io/github/stars/cahyadsn/disc_id.svg)](https://github.com/cahyadsn/disc_id/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/cahyadsn/disc_id.svg)](https://github.com/cahyadsn/disc_id/issues)
 
-##Instalasi
+## Instalasi
 1. download file disc_id.zip 
 2. extract ke folder root document webserver
 3. buat database baru dengan nama 'disc'
 4. import 'db/disc_id.sql' ke dalam database 'disc' tersebut
 5. ubah konfigurasi database pada file 'inc/db.php' sesuai dengan yang digunakan 
 6. enjoy
-
-##Teknologi
+ 
+## Teknologi
 + PHP (http://www.php.net/), 
 + MySQL (http://www.mysql.com/), 
 + jQuery (http://www.jquery.com/), 
 + MorrisJS (http://morrisjs.github.io/morris.js/index.html), 
 + RaphaelJS (http://raphaeljs.com/)
 
-##Donasi
-+ [paypal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K6YRM43CZ44UQ)
-+ BNI Syariah 0821342555
+## Donasi
++ [paypal](https://paypal.me/cahyadwiana)
++ BNI Syariah 0821 342 555
 
-##Contact
+## Contact
 + facebook (https://m.facebook.com/cahya.dsn)
 + email (cahyadsn@gmail.com)
 + demo site    : (http://cahyadsn.phpindonesia.id/disc_id) 
