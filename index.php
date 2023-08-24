@@ -3,8 +3,8 @@
 FILENAME     : index.php
 AUTHOR       : CAHYA DSN
 CREATED DATE : 2016-01-13
-UPDATED DATE : 2016-10-07
-DEMO SITE    : http://cahyadsn.dev.php.or.id/disc_id
+UPDATED DATE : 2023-08-24
+DEMO SITE    : https://psycho.cahyadsn.com/disc_id
 SOURCE CODE  : https://github.com/cahyadsn/disc_id
 *************************************/
 include 'inc/db.php';
