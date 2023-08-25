@@ -3,7 +3,7 @@
 FILENAME     : result.php
 AUTHOR       : CAHYA DSN
 CREATED DATE : 2016-01-13
-UPDATED DATE : 2023-08-24
+UPDATED DATE : 2023-08-25
 DEMO SITE    : https://psycho.cahyadsn.com/disc_id
 SOURCE CODE  : https://github.com/cahyadsn/disc_id
 *************************************/
@@ -15,6 +15,7 @@ SOURCE CODE  : https://github.com/cahyadsn/disc_id
     <link rel='stylesheet' href='css/disc.css' />
   </head>
   <body>
+  <header><h1>:: DISC Personality Result</h1></header>
 <?php
 if(isset($_POST['m']) && isset($_POST['l'])){
   include 'inc/db.php';
@@ -100,7 +101,6 @@ if(isset($_POST['m']) && isset($_POST['l'])){
   $line2=getPattern($db,$result,2);
   $line3=getPattern($db,$result,3);
 ?>
-    <header><h1>:: DISC Personality Result</h1></header>
     <div id='container'>
       <script src="js/raphael.min.js"></script>
       <script src="js/jquery.min.js"></script>
@@ -147,10 +147,6 @@ if(isset($_POST['m']) && isset($_POST['l'])){
     ?>
       </table>
     </div>
-<?php
-    /*
-  */
-    ?>
     <div>
       <h1>RESULT</h1>
       <div>
@@ -183,6 +179,6 @@ if(isset($_POST['m']) && isset($_POST['l'])){
 <?php
 }
 ?>
-  <footer>copyright &copy; 2016<?php echo (date('Y')>2016?date('Y'):'');?> by <a href='mailto:cahyadsn@gmail.com'>cahya dsn</a></footer>
+  <footer>copyright &copy; 2016<?php echo (date('Y')>2016?'-'.date('Y'):'');?> by <a href='mailto:cahyadsn@gmail.com'>cahya dsn</a></footer>
   </body>
 </html>

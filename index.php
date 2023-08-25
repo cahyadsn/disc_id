@@ -3,7 +3,7 @@
 FILENAME     : index.php
 AUTHOR       : CAHYA DSN
 CREATED DATE : 2016-01-13
-UPDATED DATE : 2023-08-24
+UPDATED DATE : 2023-08-25
 DEMO SITE    : https://psycho.cahyadsn.com/disc_id
 SOURCE CODE  : https://github.com/cahyadsn/disc_id
 *************************************/
@@ -20,13 +20,8 @@ while($row=$result->fetch_object()){
   }
   $x[$no][]=$row;
 }
-$show_mark = 0;  //<-- show 1 or hide 0 the marker
-$cols      = 3;  //<-- number of columns
-$rows      = count($x)/$cols;
-shuffle($x);
 $data=array();
 foreach($x as $dt){
-  shuffle($dt);
   foreach($dt as $d){
     $data[]=$d;
   }
@@ -57,7 +52,7 @@ foreach($x as $dt){
     <table>
       <thead>
         <tr>
-        <?php for($i=0;$i<$cols;++$i):?>
+        <?php for($i=0;$i<3;++$i):?>
           <th>No</th>
           <th>Gambaran Diri</th>
           <th>P</th>
@@ -67,35 +62,33 @@ foreach($x as $dt){
       </thead>
       <tbody>
       <?php
-      for($i=0;$i<$rows;$i++){
+      for($i=0;$i<8;$i++){
         echo "<tr".($i%2==0?" class='dark'":"").">";
         for($j=0;$j<4;++$j){
-          for($n=0;$n<$cols;$n++){
+          for($n=0;$n<3;$n++){
              if($j>0 && $n==0){
                echo "<tr".($i%2==0?" class='dark'":"").">";
              }elseif($j==0){
                echo "<th rowspan='4'"
                  .($j==0?" class='first'":"").">"
-                 .($i+$n*$rows+1)
+                 .($i+$n*8+1)
                  ."</th>";
              }
-	    $no=$n*$rows+$i*4+$j+($cols*$rows*$n);
+	    $no=$n*8+$i*4+$j+(24*$n);
             echo "<td".($j==0?" class='first'":"").">
                   {$data[$no]->term}
                   </td>
                   <td".($j==0?" class='first'":"").">
                 <input type='radio' 
-                       name='m[".($i+$n*$rows)."]' 
+                       name='m[".($i+$n*8)."]' 
                      value='{$data[$no]->most}' 
                      required />" 
-               .($show_mark?$data[$no]->most:'')
                ."</td>
                   <td".($j==0?" class='first'":"").">
                   <input type='radio' 
-                         name='l[".($i+$n*$rows)."]' 
+                         name='l[".($i+$n*8)."]' 
                          value='{$data[$no]->least}' 
                          required />"
-                 .($show_mark?$data[$no]->least:'')
                  ."</td>";
             }
           echo "</tr>";
@@ -105,7 +98,7 @@ foreach($x as $dt){
       </tbody>
       <tfoot>
         <tr>
-          <th colspan='<?php echo $cols*4;?>'>
+          <th colspan='3'>
             <input type='submit' value='proses' class='btn'/>
            </th>
          </tr>
@@ -113,6 +106,6 @@ foreach($x as $dt){
     </table>
     </form>
   </div>
-  <footer>copyright &copy; 2016<?php echo (date('Y')>2016?date('Y'):'');?> by <a href='mailto:cahyadsn@gmail.com'>cahya dsn</a></footer>
+  <footer>copyright &copy; 2016<?php echo (date('Y')>2016?'-'.date('Y'):'');?> by <a href='mailto:cahyadsn@gmail.com'>cahya dsn</a></footer>
   </body>
 </html>
