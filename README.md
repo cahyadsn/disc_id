@@ -30,8 +30,11 @@ DISC merupakan model perilaku yang membantu setiap manusia memahami“mengapa se
 + RaphaelJS (http://raphaeljs.com/)
 
 ## Donasi
-+ paypal (https://paypal.me/cahyadwiana)
-+ BNI Syariah 821 342 5550
+- untuk donasi via transfer 
+    - Bank Syariah Indonesia (BSI) 821-342-5550
+    - Bank Sinarmas (153) 005 462 4719
+    - Bank BCA Digital (Blu) (501) 000 576 776 186
+- untuk donasi via PayPal [https://paypal.me/cahyadwiana]
 
 ## Contact
 + facebook (https://m.facebook.com/cahya.dsn)
