@@ -122,7 +122,9 @@ if(isset($_POST['m']) && isset($_POST['l'])){
           xkey: 'y',
           ykeys: ['a', 'b','c'],
           parseTime:false,
-          labels: ['MOST Mask Public Self', 'LEAST Core Private Self','CHANGE Mirror Perceived Self']
+          labels: ['MOST Mask Public Self', 'LEAST Core Private Self','CHANGE Mirror Perceived Self'],
+          ymax: 8,
+          ymin: -8
         });
       });
       </script>
