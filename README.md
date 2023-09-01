@@ -18,7 +18,7 @@ DISC merupakan model perilaku yang membantu setiap manusia memahami“mengapa se
 1. download file disc_id.zip 
 2. extract ke folder root document webserver
 3. buat database baru dengan nama 'disc'
-4. import 'db/disc_id.sql' ke dalam database 'disc' tersebut
+4. import 'db/disc.sql' ke dalam database 'disc' tersebut
 5. ubah konfigurasi database pada file 'inc/db.php' sesuai dengan yang digunakan 
 6. enjoy
  
