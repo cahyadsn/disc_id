@@ -9,6 +9,8 @@ Dalam tes DISC tersebut membagi $cols tipe perilaku individu ketika berinteraksi
 
 DISC merupakan model perilaku yang membantu setiap manusia memahami“mengapa sese orang melakukan apa yang  dilakukannya”. Disamping itu dinamika dimensi Dominance, Influencing, Steadiness, dan Conscientiousness pada setiap orang yang berbeda membentuk model DISC pribadi dan menggambarkan perilaku masing masing.
 
+:warning: APLIKASI INI TIDAK DIGUNAKAN SEBAGAI ACUAN PSIKOMETRI ATAU TUJUAN KOMERSIAL :warning:
+
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/cahyadsn/disc_id/master/LICENSE)
 [![GitHub forks](https://img.shields.io/github/forks/cahyadsn/disc_id.svg)](https://github.com/cahyadsn/disc_id/network)
 [![GitHub stars](https://img.shields.io/github/stars/cahyadsn/disc_id.svg)](https://github.com/cahyadsn/disc_id/stargazers)
