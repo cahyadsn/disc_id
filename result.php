@@ -61,7 +61,7 @@ if(isset($_POST['m']) && isset($_POST['l'])){
 ?>
     <div id='container'>
       <script src="js/raphael.min.js"></script>
-      <script src="js/zepto.min.js"></script>
+      <script src="js/jquery.min.js"></script>
       <script src="js/morris.min.js"></script>
       <script>
       $(function(){
