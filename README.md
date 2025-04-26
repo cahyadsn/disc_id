@@ -1,11 +1,13 @@
 # disc_id
 DISC Personality Test dalam bahasa Indonesia
 
+![screenshot](https://github.com/cahyadsn/disc_id/blob/master/img/home.png?raw=true)
+
 ## Pendahuluan
 
 Alat tes DISC adalah sebuah alat untuk memahami tipe tipe perilaku dan gaya ke pribadian, yang pertama kali dikembangkan oleh William Moulton Marston. Dalam penerapannya di dunia bisnis dan usaha, alat ini telah membuka wawasan dan pemikiran, baik secara professional maupun secara personal.
 
-Dalam tes DISC tersebut membagi $cols tipe perilaku individu ketika berinteraksi dengan lingkungannya, yakni  Dominance, Influence, Steadiness dan Compliance. Ini merupakan suatu konstruksi yang cukup kompleks, dan tidak mudah digambarkan dengan satu kata saja, tetapi dapat dikelompokkan sebagai unsur ketegasan (assertiveness), komunikasi (communication), kesabaran (patience) dan struktur (structure).
+Dalam tes DISC tersebut membagi tipe perilaku individu ketika berinteraksi dengan lingkungannya, yakni  Dominance, Influence, Steadiness dan Compliance. Ini merupakan suatu konstruksi yang cukup kompleks, dan tidak mudah digambarkan dengan satu kata saja, tetapi dapat dikelompokkan sebagai unsur ketegasan (assertiveness), komunikasi (communication), kesabaran (patience) dan struktur (structure).
 
 DISC merupakan model perilaku yang membantu setiap manusia memahami“mengapa sese orang melakukan apa yang  dilakukannya”. Disamping itu dinamika dimensi Dominance, Influencing, Steadiness, dan Conscientiousness pada setiap orang yang berbeda membentuk model DISC pribadi dan menggambarkan perilaku masing masing.
 
@@ -15,8 +17,6 @@ DISC merupakan model perilaku yang membantu setiap manusia memahami“mengapa se
 [![GitHub forks](https://img.shields.io/github/forks/cahyadsn/disc_id.svg)](https://github.com/cahyadsn/disc_id/network)
 [![GitHub stars](https://img.shields.io/github/stars/cahyadsn/disc_id.svg)](https://github.com/cahyadsn/disc_id/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/cahyadsn/disc_id.svg)](https://github.com/cahyadsn/disc_id/issues)
-
-![screenshot](https://github.com/cahyadsn/disc_id/blob/master/img/home.png?raw=true)
 
 ## Instalasi
 1. download file disc_id.zip 
@@ -35,9 +35,9 @@ DISC merupakan model perilaku yang membantu setiap manusia memahami“mengapa se
 
 ## Donasi
 - untuk donasi via transfer 
+    - Bank BCA Digital (Blu) (501) 000 576 776 186
     - Bank Syariah Indonesia (BSI) 821-342-5550
     - Bank Sinarmas (153) 005 462 4719
-    - Bank BCA Digital (Blu) (501) 000 576 776 186
 - untuk donasi via PayPal [https://paypal.me/cahyadwiana]
 
 ## Contact
