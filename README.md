@@ -16,6 +16,8 @@ DISC merupakan model perilaku yang membantu setiap manusia memahami“mengapa se
 [![GitHub stars](https://img.shields.io/github/stars/cahyadsn/disc_id.svg)](https://github.com/cahyadsn/disc_id/stargazers)
 [![GitHub issues](https://img.shields.io/github/issues/cahyadsn/disc_id.svg)](https://github.com/cahyadsn/disc_id/issues)
 
+![screenshot](https://github.com/cahyadsn/disc_id/blob/master/img/home.png?raw=true)
+
 ## Instalasi
 1. download file disc_id.zip 
 2. extract ke folder root document webserver
