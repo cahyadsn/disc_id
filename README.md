@@ -25,6 +25,12 @@ DISC merupakan model perilaku yang membantu setiap manusia memahami“mengapa se
 4. import 'db/disc.sql' ke dalam database 'disc' tersebut
 5. ubah konfigurasi database pada file 'inc/db.php' sesuai dengan yang digunakan 
 6. enjoy
+
+## Disclaimer 
+- Tampilan dan data yang ada di repo dan demo web berbeda.
+- Data asli DiSC bersifat proprietary sehingga tidak disertakan dalam repo public ini.
+- Data, formulasi dan interpretasi hasil test adalah dalam ranah ilmu psikologi yang secara kode etik hanya untuk kalangan psikolog yang berwenang.
+- Tampilan dalam repo ini dibuat sederhana _karena keterbatasan kemampuan desain dari penyusun_ , silakan diperbaiki dan kembangkan sendiri.
  
 ## Teknologi
 + PHP (http://www.php.net/), 
