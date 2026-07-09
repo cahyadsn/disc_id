@@ -1,8 +1,6 @@
 # DISC Personality Test (disc_id)
 Aplikasi Web Tes Kepribadian DISC Berbahasa Indonesia dengan Desain Modern & Responsif.
 
-![screenshot](https://github.com/cahyadsn/disc_id/blob/master/img/home.png?raw=true)
-
 ## Pendahuluan
 
 Alat tes **DISC** adalah sebuah instrumen evaluasi perilaku psikologis yang digunakan untuk memahami tipe-tipe perilaku dan gaya kepribadian seseorang. Teori ini pertama kali dikembangkan oleh **William Moulton Marston**. Dalam penerapannya di dunia profesional, bisnis, organisasi, maupun personal, alat tes ini sangat membantu dalam membuka wawasan terkait pola komunikasi dan interaksi antar-individu.
