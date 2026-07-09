@@ -3,7 +3,7 @@
 FILENAME     : index.php
 AUTHOR       : CAHYA DSN
 CREATED DATE : 2016-01-13
-UPDATED DATE : 2023-08-25
+UPDATED DATE : 2026-07-09 15:00:59
 DEMO SITE    : https://psycho.cahyadsn.com/disc_id
 SOURCE CODE  : https://github.com/cahyadsn/disc_id
 *************************************/
@@ -34,6 +34,9 @@ foreach($x as $dt){
     <meta http-equiv="expires" content="<?php echo date('r');?>" />
     <meta http-equiv="pragma" content="no-cache" />
     <meta http-equiv="cache-control" content="no-cache" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='css/disc.css?<?php echo md5(date('r'));?>' />
   </head>
   <body>
@@ -75,7 +78,8 @@ foreach($x as $dt){
                  ."</th>";
              }
 	    $no=$n*8+$i*4+$j+(24*$n);
-            echo "<td".($j==0?" class='first'":"").">
+            $class = ($j==0?"first ":"") . "text-left";
+            echo "<td class='{$class}'>
                   {$data[$no]->term}
                   </td>
                   <td".($j==0?" class='first'":"").">
@@ -98,7 +102,7 @@ foreach($x as $dt){
       </tbody>
       <tfoot>
         <tr>
-          <th colspan='3'>
+          <th colspan='12'>
             <input type='submit' value='proses' class='btn'/>
            </th>
          </tr>
