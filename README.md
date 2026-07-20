@@ -1,6 +1,14 @@
 # DISC Personality Test (disc_id)
 Aplikasi Web Tes Kepribadian DISC Berbahasa Indonesia dengan Desain Modern & Responsif.
 
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/cahyadsn/disc_id.svg)](https://github.com/cahyadsn/disc_id/issues)
+[![GitHub forks](https://img.shields.io/github/forks/cahyadsn/disc_id.svg)](https://github.com/cahyadsn/disc_id/network)
+[![GitHub stars](https://img.shields.io/github/stars/cahyadsn/disc_id.svg)](https://github.com/cahyadsn/disc_id/stargazers)
+![GitHub commit activity](https://img.shields.io/github/commit-activity/m/cahyadsn/disc_id)
+[![GitHub last commit](https://img.shields.io/github/last-commit/google/skia.svg?style=flat)]()
+[![Donate](https://img.shields.io/badge/$-support-ff69b4.svg?style=flat)](https://paypal.me/cahyadwiana)
+
 ## Pendahuluan
 
 Alat tes **DISC** adalah sebuah instrumen evaluasi perilaku psikologis yang digunakan untuk memahami tipe-tipe perilaku dan gaya kepribadian seseorang. Teori ini pertama kali dikembangkan oleh **William Moulton Marston**. Dalam penerapannya di dunia profesional, bisnis, organisasi, maupun personal, alat tes ini sangat membantu dalam membuka wawasan terkait pola komunikasi dan interaksi antar-individu.
@@ -119,8 +127,8 @@ Berikut adalah gambaran struktur direktori dan file utama dalam proyek ini:
 
 Jika Anda merasa proyek ini bermanfaat dan ingin memberikan dukungan kepada pengembang, Anda dapat menyalurkan donasi melalui:
 *   **Transfer Bank Lokal**:
-    *   Bank BCA Digital (Blu) (501): `000 576 776 186`
     *   Bank Jago (542): `5003 5796 1022`
+    *   Bank BCA Digital (Blu) (501): `000 576 776 186`
     *   Bank Sinarmas (153): `005 462 4719`
     *   Bank Syariah Indonesia (BSI): `821-342-5550`
 *   **PayPal**: [https://paypal.me/cahyadwiana](https://paypal.me/cahyadwiana)
