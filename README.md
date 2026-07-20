@@ -54,7 +54,7 @@ Untuk menjalankan aplikasi ini secara lokal, pastikan lingkungan server Anda mem
 4.  **Impor Skema Database**:
     *   Impor berkas SQL yang berada di dalam folder `db/disc.sql` ke dalam database `disc` yang baru saja Anda buat.
 5.  **Konfigurasi Koneksi**:
-    *   Buka file [db.php](file:///D:/laragon/repo/dev/disc_id/inc/db.php) di dalam direktori `inc/`.
+    *   Buka file [db.php](/inc/db.php) di dalam direktori `inc/`.
     *   Sesuaikan kredensial database (host, username, password, dan nama database) dengan konfigurasi server lokal Anda.
 6.  **Jalankan Aplikasi**:
     *   Buka browser Anda dan akses aplikasi melalui alamat lokal (contoh: `http://localhost/disc_id`).
@@ -70,20 +70,20 @@ Untuk menjalankan pengujian:
 php tests/run_tests.php
 ```
 
-Informasi lebih lanjut tentang struktur pengujian dapat dilihat di folder [tests/](file:///D:/laragon/repo/dev/disc_id/tests/).
+Informasi lebih lanjut tentang struktur pengujian dapat dilihat di folder [tests/](/tests/).
 
 ---
 
 ## Struktur Proyek
 
 Berikut adalah gambaran struktur direktori dan file utama dalam proyek ini:
-*   [css/](file:///D:/laragon/repo/dev/disc_id/css/) — Berisi file stylesheet [disc.css](file:///D:/laragon/repo/dev/disc_id/css/disc.css) untuk styling tampilan modern.
-*   [db/](file:///D:/laragon/repo/dev/disc_id/db/) — Berisi skrip SQL [disc.sql](file:///D:/laragon/repo/dev/disc_id/db/disc.sql) untuk inisialisasi basis data.
-*   [img/](file:///D:/laragon/repo/dev/disc_id/img/) — Menyimpan gambar aset atau tangkapan layar antarmuka.
-*   [inc/](file:///D:/laragon/repo/dev/disc_id/inc/) — Berisi file-file konfigurasi backend PHP ([db.php](file:///D:/laragon/repo/dev/disc_id/inc/db.php) & [formula.php](file:///D:/laragon/repo/dev/disc_id/inc/formula.php)).
-*   [js/](file:///D:/laragon/repo/dev/disc_id/js/) — Script Javascript untuk merender diagram SVG ([disc-chart.js](file:///D:/laragon/repo/dev/disc_id/js/disc-chart.js)).
-*   [index.php](file:///D:/laragon/repo/dev/disc_id/index.php) — Halaman utama kuesioner tes kepribadian.
-*   [result.php](file:///D:/laragon/repo/dev/disc_id/result.php) — Halaman pemrosesan skor dan penayangan hasil analisis kepribadian beserta grafik.
+*   [css/](/css/) — Berisi file stylesheet [disc.css](/css/disc.css) untuk styling tampilan modern.
+*   [db/](/db/) — Berisi skrip SQL [disc.sql](/db/disc.sql) untuk inisialisasi basis data.
+*   [img/](/img/) — Menyimpan gambar aset atau tangkapan layar antarmuka.
+*   [inc/](/inc/) — Berisi file-file konfigurasi backend PHP ([db.php](/inc/db.php) & [formula.php](/inc/formula.php)).
+*   [js/](/js/) — Script Javascript untuk merender diagram SVG ([disc-chart.js](/js/disc-chart.js)).
+*   [index.php](/index.php) — Halaman utama kuesioner tes kepribadian.
+*   [result.php](/result.php) — Halaman pemrosesan skor dan penayangan hasil analisis kepribadian beserta grafik.
 
 ---
 
@@ -139,4 +139,4 @@ Untuk pertanyaan, saran, atau kolaborasi, silakan hubungi kami melalui saluran b
 *   **Repositori**: [github.com/cahyadsn/disc_id](https://github.com/cahyadsn/disc_id)
 
 ---
-*Lisensi Proyek: [MIT License](file:///D:/laragon/repo/dev/disc_id/LICENSE)*
+*Lisensi Proyek: [MIT License](/LICENSE)*
