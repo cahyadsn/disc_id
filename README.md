@@ -61,6 +61,19 @@ Untuk menjalankan aplikasi ini secara lokal, pastikan lingkungan server Anda mem
 
 ---
 
+## Unit Testing (Pengujian)
+
+Aplikasi ini dilengkapi dengan unit testing menggunakan PHP murni tanpa ketergantungan library eksternal (native unit testing). Pengujian ini memvalidasi keakuratan rumus konversi skor dan pola kepribadian.
+
+Untuk menjalankan pengujian:
+```bash
+php tests/run_tests.php
+```
+
+Informasi lebih lanjut tentang struktur pengujian dapat dilihat di folder [tests/](file:///D:/laragon/repo/dev/disc_id/tests/).
+
+---
+
 ## Struktur Proyek
 
 Berikut adalah gambaran struktur direktori dan file utama dalam proyek ini:
@@ -75,6 +88,9 @@ Berikut adalah gambaran struktur direktori dan file utama dalam proyek ini:
 ---
 
 ## Changelog
+
+### [2026-07-20 08:27]
+*   **Pengujian**: Menambahkan unit testing native menggunakan PHP murni tanpa library pihak ketiga untuk menguji fungsi formula dan pola kepribadian (`getDISCResults` & `getPattern`) lengkap dengan mock database.
 
 ### [2026-07-09 15:06]
 *   **Desain**: Memindahkan posisi tombol **PROSES** ke sebelah kanan bawah form tabel agar mengikuti alur pembacaan pengguna yang lebih natural.
