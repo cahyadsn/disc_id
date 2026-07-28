@@ -6,7 +6,7 @@ FILENAME     : result.php
 DESC         :
 AUTHOR       : CAHYA DSN
 CREATED DATE : 2016-01-13
-UPDATED DATE : 2025-03-18 14:21
+UPDATED DATE : 2026-07-28 12:11:34
 DEMO SITE    : https://psycho.cahyadsn.com/disc_id
 SOURCE CODE  : https://github.com/cahyadsn/disc_id
 ================================================================================
@@ -30,24 +30,24 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-copyright (c) 2024 by cahya dsn; cahyadsn@gmail.com
+copyright (c) 2026 by cahya dsn; cahyadsn@gmail.com
 ================================================================================
 */
 ?>
 <doctype html>
 <html>
   <head>
-    <title>DISC Personality Test</title>
+    <title>DISC Personality Test v<?php echo $version;?></title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel='stylesheet' href='css/disc.css' />
   </head>
   <body>
-  <header><h1>:: DISC Personality Result</h1></header>
+  <header><h1>DISC Personality Result v<?php echo $version;?></h1></header>
 <?php
-if(isset($_POST['m']) && isset($_POST['l'])){
-  include 'inc/db.php';
+if(isset($_POST['m']) && isset($_POST['l']) && is_array($_POST['m']) && is_array($_POST['l'])){
+  include 'inc/config.php';
   include 'inc/formula.php';
   $most=array_count_values($_POST['m']);
   $least=array_count_values($_POST['l']);

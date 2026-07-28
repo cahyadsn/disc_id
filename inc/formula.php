@@ -3,25 +3,34 @@
 FILENAME     : formula.php
 AUTHOR       : CAHYA DSN
 CREATED DATE : 2023-10-08
-UPDATED DATE : 2023-10-08
+UPDATED DATE : 2026-07-28 12:11:34
 DEMO SITE    : https://psycho.cahyadsn.com/disc_id
 SOURCE CODE  : https://github.com/cahyadsn/disc_id
 *************************************/
 
 function getDISCResults($db,$result,$line){
+    $line = (int)$line;
+    $dVal = (int)($result['D'][$line] ?? 0);
+    $iVal = (int)($result['I'][$line] ?? 0);
+    $sVal = (int)($result['S'][$line] ?? 0);
+    $cVal = (int)($result['C'][$line] ?? 0);
+
     $sql="
       SELECT
         d.d,i.i,s.s,c.c
       FROM
-        (SELECT d FROM tbl_results WHERE line={$line} AND value={$result['D'][$line]}) d,
-        (SELECT i FROM tbl_results WHERE line={$line} AND value={$result['I'][$line]}) i,
-        (SELECT s FROM tbl_results WHERE line={$line} AND value={$result['S'][$line]}) s,
-        (SELECT c FROM tbl_results WHERE line={$line} AND value={$result['C'][$line]}) c
+        (SELECT d FROM tbl_results WHERE line={$line} AND value={$dVal}) d,
+        (SELECT i FROM tbl_results WHERE line={$line} AND value={$iVal}) i,
+        (SELECT s FROM tbl_results WHERE line={$line} AND value={$sVal}) s,
+        (SELECT c FROM tbl_results WHERE line={$line} AND value={$cVal}) c
        ";
-    $result=$db->query($sql);
-    $data=$result->fetch_object();
-    $result->free();
-    return $data;
+    $dbResult=$db->query($sql);
+    if (!$dbResult) {
+        return (object)['d' => 0.0, 'i' => 0.0, 's' => 0.0, 'c' => 0.0];
+    }
+    $data=$dbResult->fetch_object();
+    $dbResult->free();
+    return $data ?: (object)['d' => 0.0, 'i' => 0.0, 's' => 0.0, 'c' => 0.0];
   }
 
   function getPattern($db,$result,$line){
@@ -71,9 +80,22 @@ function getDISCResults($db,$result,$line){
     elseif($D>0 && $I>0 && $S<=0 && $C>0 && $C>=$I && $I>=$D) $pattern=39;
     elseif($D>0 && $I<=0 && $S>0 && $C>0 && $C>=$S && $S>=$D) $pattern=40;
     else $pattern=0;
+    $pattern = (int)$pattern;
     $sql="SELECT * FROM tbl_patterns WHERE id={$pattern}";
-    $result=$db->query($sql);
-    $data=$result->fetch_object();
-    $result->free();
+    $dbResult=$db->query($sql);
+    $data=null;
+    if ($dbResult) {
+        $data=$dbResult->fetch_object();
+        $dbResult->free();
+    }
+    if (!$data) {
+        $data = (object)[
+            'id' => 0,
+            'pattern' => 'UNKNOWN',
+            'behaviour' => '',
+            'description' => 'No pattern profile matches these scores.',
+            'jobs' => ''
+        ];
+    }
     return array($disc,$data);
   }

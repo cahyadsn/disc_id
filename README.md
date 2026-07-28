@@ -62,8 +62,9 @@ Untuk menjalankan aplikasi ini secara lokal, pastikan lingkungan server Anda mem
 4.  **Impor Skema Database**:
     *   Impor berkas SQL yang berada di dalam folder `db/disc.sql` ke dalam database `disc` yang baru saja Anda buat.
 5.  **Konfigurasi Koneksi**:
-    *   Buka file [db.php](/inc/db.php) di dalam direktori `inc/`.
-    *   Sesuaikan kredensial database (host, username, password, dan nama database) dengan konfigurasi server lokal Anda.
+    *   Salin file `.env.example` menjadi `.env` di direktori root proyek.
+    *   Sesuaikan kredensial database (`DB_HOST`, `DB_USER`, `DB_PASS`, `DB_NAME`) di dalam file `.env` dengan konfigurasi server lokal Anda.
+    *   Kredensial database akan dimuat secara otomatis oleh [config.php](/inc/config.php).
 6.  **Jalankan Aplikasi**:
     *   Buka browser Anda dan akses aplikasi melalui alamat lokal (contoh: `http://localhost/disc_id`).
 
@@ -88,7 +89,7 @@ Berikut adalah gambaran struktur direktori dan file utama dalam proyek ini:
 *   [css/](/css/) — Berisi file stylesheet [disc.css](/css/disc.css) untuk styling tampilan modern.
 *   [db/](/db/) — Berisi skrip SQL [disc.sql](/db/disc.sql) untuk inisialisasi basis data.
 *   [img/](/img/) — Menyimpan gambar aset atau tangkapan layar antarmuka.
-*   [inc/](/inc/) — Berisi file-file konfigurasi backend PHP ([db.php](/inc/db.php) & [formula.php](/inc/formula.php)).
+*   [inc/](/inc/) — Berisi file-file konfigurasi backend PHP ([config.php](/inc/config.php) & [formula.php](/inc/formula.php)).
 *   [js/](/js/) — Script Javascript untuk merender diagram SVG ([disc-chart.js](/js/disc-chart.js)).
 *   [index.php](/index.php) — Halaman utama kuesioner tes kepribadian.
 *   [result.php](/result.php) — Halaman pemrosesan skor dan penayangan hasil analisis kepribadian beserta grafik.
@@ -96,6 +97,10 @@ Berikut adalah gambaran struktur direktori dan file utama dalam proyek ini:
 ---
 
 ## Changelog
+
+### [2026-07-28 12:11]
+*   **Struktur & Layout**: Mengubah tata letak tabel kuesioner pada `index.php` menjadi susunan kartu responsif berbasis `div` dengan CSS Grid yang mendukung tampilan ramah seluler (*mobile-friendly*).
+*   **Keamanan & Konfigurasi**: Mengganti file `db.php` menjadi `config.php`, menambahkan file `.env` & `.env.example` untuk memisahkan kredensial database, serta mengoptimalkan kode query SQL dari potensi injeksi dan *null reference*.
 
 ### [2026-07-20 08:27]
 *   **Pengujian**: Menambahkan unit testing native menggunakan PHP murni tanpa library pihak ketiga untuk menguji fungsi formula dan pola kepribadian (`getDISCResults` & `getPattern`) lengkap dengan mock database.

@@ -1,13 +1,39 @@
 <?php
-/************************************
+/*
+BISMILLAAHIRRAHMAANIRRAHIIM - In the Name of Allah, Most Gracious, Most Merciful
+================================================================================
 FILENAME     : index.php
+DESC         :
 AUTHOR       : CAHYA DSN
 CREATED DATE : 2016-01-13
-UPDATED DATE : 2026-07-09 15:00:59
+UPDATED DATE : 2026-07-28 12:11:34
 DEMO SITE    : https://psycho.cahyadsn.com/disc_id
 SOURCE CODE  : https://github.com/cahyadsn/disc_id
-*************************************/
-include 'inc/db.php';
+================================================================================
+MIT License
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+copyright (c) 2024 by cahya dsn; cahyadsn@gmail.com
+================================================================================
+*/
+include 'inc/config.php';
 //-- query data from database
 $sql='SELECT * FROM tbl_personalities ORDER BY no ASC';
 $result=$db->query($sql);
@@ -30,7 +56,7 @@ foreach($x as $dt){
 <doctype html>
 <html>
   <head>
-    <title>DISC Personality Test</title>
+    <title>DISC Personality Test v<?php echo $version;?></title>
     <meta http-equiv="expires" content="<?php echo date('r');?>" />
     <meta http-equiv="pragma" content="no-cache" />
     <meta http-equiv="cache-control" content="no-cache" />
@@ -40,7 +66,7 @@ foreach($x as $dt){
     <link rel='stylesheet' href='css/disc.css?<?php echo md5(date('r'));?>' />
   </head>
   <body>
-    <header><h1>:: DISC Personality Test</h1></header>
+    <header><h1>DISC Personality Test v<?php echo $version;?></h1></header>
     <div id='container'>
     <div class='info-box'>
       <b>INSTRUKSI</b> : Setiap nomor di bawah ini memuat 4 (empat) kalimat. Tugas anda adalah : <br />
@@ -52,62 +78,44 @@ foreach($x as $dt){
       <b>PERHATIKAN</b> : Setiap nomor hanya ada 1 (satu) tanda/cek di bawah masing-masing kolom P dan K.<br />
     </div>
     <form method='post' action='result.php'>
-    <table>
-      <thead>
-        <tr>
-        <?php for($i=0;$i<3;++$i):?>
-          <th>No</th>
-          <th>Gambaran Diri</th>
-          <th>P</th>
-          <th>K</th>
-        <?php endfor;?>
-        </tr>
-      </thead>
-      <tbody>
+      <div class='question-grid'>
       <?php
-      for($i=0;$i<8;$i++){
-        echo "<tr".($i%2==0?" class='dark'":"").">";
-        for($j=0;$j<4;++$j){
-          for($n=0;$n<3;$n++){
-             if($j>0 && $n==0){
-               echo "<tr".($i%2==0?" class='dark'":"").">";
-             }elseif($j==0){
-               echo "<th rowspan='4'"
-                 .($j==0?" class='first'":"").">"
-                 .($i+$n*8+1)
-                 ."</th>";
-             }
-	    $no=$n*8+$i*4+$j+(24*$n);
-            $class = ($j==0?"first ":"") . "text-left";
-            echo "<td class='{$class}'>
-                  {$data[$no]->term}
-                  </td>
-                  <td".($j==0?" class='first'":"").">
-                <input type='radio' 
-                       name='m[".($i+$n*8)."]' 
-                     value='{$data[$no]->most}' 
-                     required />" 
-               ."</td>
-                  <td".($j==0?" class='first'":"").">
-                  <input type='radio' 
-                         name='l[".($i+$n*8)."]' 
-                         value='{$data[$no]->least}' 
-                         required />"
-                 ."</td>";
+      for($q = 0; $q < 24; $q++) {
+        $qClass = (($q + 1) % 2 != 0) ? "q-odd" : "q-even";
+        ?>
+        <div class="question-card <?php echo $qClass; ?>">
+          <div class="question-header">No. <?php echo ($q + 1); ?></div>
+          <div class="question-body">
+            <div class="question-row header-row">
+              <div class="col-term">Gambaran Diri</div>
+              <div class="col-radio">P</div>
+              <div class="col-radio">K</div>
+            </div>
+            <?php
+            for($j = 0; $j < 4; $j++) {
+              $no = $q * 4 + $j;
+              ?>
+              <div class="question-row term-row">
+                <div class="col-term"><?php echo htmlspecialchars($data[$no]->term); ?></div>
+                <div class="col-radio">
+                  <input type="radio" name="m[<?php echo $q; ?>]" value="<?php echo htmlspecialchars($data[$no]->most); ?>" required />
+                </div>
+                <div class="col-radio">
+                  <input type="radio" name="l[<?php echo $q; ?>]" value="<?php echo htmlspecialchars($data[$no]->least); ?>" required />
+                </div>
+              </div>
+              <?php
             }
-          echo "</tr>";
-        }
+            ?>
+          </div>
+        </div>
+        <?php
       }
       ?>
-      </tbody>
-      <tfoot>
-        <tr>
-          <th colspan='12'>
-            <input type='submit' value='proses' class='btn'/>
-           </th>
-         </tr>
-      </tfoot>
-    </table>
+      </div>
+      <div class="submit-container">
+        <input type='submit' value='proses' class='btn'/>
+      </div>
     </form>
   </div>
   <footer>copyright &copy; 2016<?php echo (date('Y')>2016?'-'.date('Y'):'');?> by <a href='mailto:cahyadsn@gmail.com'>cahya dsn</a></footer>
