@@ -103,18 +103,13 @@ disc_id/
 ├── tests/
 │   ├── README.md           # Panduan detail mengenai pengujian unit
 │   └── run_tests.php       # Berkas pengujian unit (native) untuk logika formula & mock database
-├── .env                    # Konfigurasi kredensial basis data lokal (salinan dari .env.example)
 ├── .env.example            # Templat berkas konfigurasi lingkungan
 ├── .gitignore              # Daftar berkas/direktori yang diabaikan oleh Git
-├── CLAUDE.md               # Panduan pengembangan untuk asisten AI Claude
-├── GEMINI.md               # Panduan pengembangan untuk asisten AI Gemini
 ├── LICENSE                 # Lisensi perangkat lunak (MIT)
 ├── README.md               # Dokumentasi utama proyek ini
 ├── index.php               # Halaman beranda dengan kuesioner interaktif tes DISC
 └── result.php              # Halaman hasil analisis skor, grafik, dan rekomendasi profesi
 ```
-
----
 
 ## Changelog
 
