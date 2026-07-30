@@ -85,27 +85,47 @@ Informasi lebih lanjut tentang struktur pengujian dapat dilihat di folder [tests
 
 ## Struktur Proyek
 
-Berikut adalah gambaran struktur direktori dan file utama dalam proyek ini:
-*   [css/](/css/) — Berisi file stylesheet [disc.css](/css/disc.css) untuk styling tampilan modern.
-*   [db/](/db/) — Berisi skrip SQL [disc.sql](/db/disc.sql) untuk inisialisasi basis data.
-*   [img/](/img/) — Menyimpan gambar aset atau tangkapan layar antarmuka.
-*   [inc/](/inc/) — Berisi file-file konfigurasi backend PHP ([config.php](/inc/config.php) & [formula.php](/inc/formula.php)).
-*   [js/](/js/) — Script Javascript untuk merender diagram SVG ([disc-chart.js](/js/disc-chart.js)).
-*   [index.php](/index.php) — Halaman utama kuesioner tes kepribadian.
-*   [result.php](/result.php) — Halaman pemrosesan skor dan penayangan hasil analisis kepribadian beserta grafik.
+Berikut adalah struktur direktori dan file dalam proyek ini:
+
+```text
+disc_id/
+├── css/
+│   └── disc.css            # Stylesheet utama dengan gaya modern (Glassmorphism) & responsif
+├── db/
+│   └── disc.sql            # Skema basis data MySQL/MariaDB untuk data instrumen & pola kepribadian
+├── img/
+│   └── home.png            # Aset gambar/tangkapan layar untuk halaman utama
+├── inc/
+│   ├── config.php          # Konfigurasi aplikasi dan inisialisasi koneksi database (.env)
+│   └── formula.php         # Logika formula konversi skor dan penentuan tipe pola DISC
+├── js/
+│   └── disc-chart.js       # Logika visualisasi grafik garis DISC berbasis SVG (Vanilla JS)
+├── tests/
+│   ├── README.md           # Panduan detail mengenai pengujian unit
+│   └── run_tests.php       # Berkas pengujian unit (native) untuk logika formula & mock database
+├── .env                    # Konfigurasi kredensial basis data lokal (salinan dari .env.example)
+├── .env.example            # Templat berkas konfigurasi lingkungan
+├── .gitignore              # Daftar berkas/direktori yang diabaikan oleh Git
+├── CLAUDE.md               # Panduan pengembangan untuk asisten AI Claude
+├── GEMINI.md               # Panduan pengembangan untuk asisten AI Gemini
+├── LICENSE                 # Lisensi perangkat lunak (MIT)
+├── README.md               # Dokumentasi utama proyek ini
+├── index.php               # Halaman beranda dengan kuesioner interaktif tes DISC
+└── result.php              # Halaman hasil analisis skor, grafik, dan rekomendasi profesi
+```
 
 ---
 
 ## Changelog
 
-### [2026-07-28 12:11]
+### [2.1.1] - 2026-07-28 12:11
 *   **Struktur & Layout**: Mengubah tata letak tabel kuesioner pada `index.php` menjadi susunan kartu responsif berbasis `div` dengan CSS Grid yang mendukung tampilan ramah seluler (*mobile-friendly*).
 *   **Keamanan & Konfigurasi**: Mengganti file `db.php` menjadi `config.php`, menambahkan file `.env` & `.env.example` untuk memisahkan kredensial database, serta mengoptimalkan kode query SQL dari potensi injeksi dan *null reference*.
 
-### [2026-07-20 08:27]
+### [2.1.0] - 2026-07-20 08:27
 *   **Pengujian**: Menambahkan unit testing native menggunakan PHP murni tanpa library pihak ketiga untuk menguji fungsi formula dan pola kepribadian (`getDISCResults` & `getPattern`) lengkap dengan mock database.
 
-### [2026-07-09 15:06]
+### [2.0.1] - 2026-07-09 15:06
 *   **Desain**: Memindahkan posisi tombol **PROSES** ke sebelah kanan bawah form tabel agar mengikuti alur pembacaan pengguna yang lebih natural.
 *   **Tata Letak**: Mengubah penjajaran teks (*text-alignment*) pada kolom daftar **Gambaran Diri** menjadi rata kiri (*left-aligned*) agar teks deskripsi lebih rapi dan mudah dibaca secara vertikal.
 

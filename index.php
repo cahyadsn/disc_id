@@ -3,10 +3,10 @@
 BISMILLAAHIRRAHMAANIRRAHIIM - In the Name of Allah, Most Gracious, Most Merciful
 ================================================================================
 FILENAME     : index.php
-DESC         :
+DESC         : main page and question list for disc_id apps
 AUTHOR       : CAHYA DSN
 CREATED DATE : 2016-01-13
-UPDATED DATE : 2026-07-28 12:11:34
+UPDATED DATE : 2026-07-30 21:40:27
 DEMO SITE    : https://psycho.cahyadsn.com/disc_id
 SOURCE CODE  : https://github.com/cahyadsn/disc_id
 ================================================================================
@@ -30,7 +30,7 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-copyright (c) 2024 by cahya dsn; cahyadsn@gmail.com
+copyright (c) 2026 by cahya dsn; cahyadsn@gmail.com
 ================================================================================
 */
 include 'inc/config.php';
@@ -53,7 +53,7 @@ foreach($x as $dt){
   }
 }
 ?>
-<doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>DISC Personality Test v<?php echo $version;?></title>

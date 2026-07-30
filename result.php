@@ -3,10 +3,10 @@
 BISMILLAAHIRRAHMAANIRRAHIIM - In the Name of Allah, Most Gracious, Most Merciful
 ================================================================================
 FILENAME     : result.php
-DESC         :
+DESC         : result test page for disc_id apps
 AUTHOR       : CAHYA DSN
 CREATED DATE : 2016-01-13
-UPDATED DATE : 2026-07-28 12:11:34
+UPDATED DATE : 2026-07-30 21:41:46
 DEMO SITE    : https://psycho.cahyadsn.com/disc_id
 SOURCE CODE  : https://github.com/cahyadsn/disc_id
 ================================================================================
@@ -34,7 +34,7 @@ copyright (c) 2026 by cahya dsn; cahyadsn@gmail.com
 ================================================================================
 */
 ?>
-<doctype html>
+<!DOCTYPE html>
 <html>
   <head>
     <title>DISC Personality Test v<?php echo $version;?></title>
